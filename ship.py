@@ -1,6 +1,8 @@
 import math
 
+
 class Ship:
+    """this class is for the spaceship object in the game 'Asteroids'"""
     def __init__(self, location, speed, heading, life_count):
         # tuple: random initial x,y coordinate of the ship within the screen limits
         self.__location = location
@@ -39,6 +41,7 @@ class Ship:
         self.__life_count -= 1
 
     def speed_up(self):
+        """eccelerates the ship using the formula given in the instructions"""
         speed_x, speed_y = self.__speed
         new_speed_x = speed_x + math.cos(math.radians(self.__heading))
         new_speed_y = speed_y + math.sin(math.radians(self.__heading))

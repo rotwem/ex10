@@ -1,7 +1,8 @@
-import random
 import math
 
+
 class Asteroid:
+    """this class is for the asteroid object in the game 'Asteroids'"""
     def __init__(self, location, speed, size):
         # tuple: random initial x,y coordinate of the ship within the screen limits
         self.__location = location
@@ -29,7 +30,8 @@ class Asteroid:
         return self.__size
 
     def has_intersection(self, obj):
-        # notice to send specific object AKA self.__something
+        """this method checks if the object passed as argument collided with the asteroid object,
+        according to a given formula. Notice to send specific object AKA self.__something"""
         asteroid_x, asteroid_y = self.get_location()
         obj_x, obj_y = obj.get_location()
         distance = math.sqrt(((obj_x - asteroid_x) ** 2) + ((obj_y - asteroid_y) ** 2))
@@ -37,5 +39,3 @@ class Asteroid:
             return True
         else:
             return False
-
-
